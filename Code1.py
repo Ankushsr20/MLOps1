@@ -113,29 +113,21 @@ test_images_norm = test_images / 255.0
 # In[16]:
 
 
-conv1 = layers.Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1) )
-conv2 = layers.Conv2D(64, (3,3), activation='relu')
-conv3 = layers.Conv2D(128, (3,3), activation='relu')
-max_pool_1 = layers.MaxPooling2D((2,2))
-max_pool_2 = layers.MaxPooling2D((2,2))
-max_pool_3 = layers.MaxPooling2D((2,2))
-flat_layer = layers.Flatten()
-fc = layers.Dense(128, activation='relu')
-output = layers.Dense(10, 'softmax')
+
+model = models.Sequential()
+model.add(layers.Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1) ))
+model.add(layers.Conv2D(64, (3,3), activation='relu'))
+model.add(layers.Conv2D(128, (3,3), activation='relu'))
+model.add(layers.MaxPooling2D((2,2)))
+model.add(layers.MaxPooling2D((2,2)))
+model.add(layers.MaxPooling2D((2,2)))
+model.add(layers.Flatten())
+model.add(layers.Dense(128, activation='relu'))
+model.add(layers.Dense(10, 'softmax'))
 
 
 # In[17]:
 
-
-model = models.Sequential()
-
-model.add(conv1)
-model.add(conv2)
-model.add(conv3)
-model.add(max_pool_1)
-model.add(flat_layer)
-model.add(fc)
-model.add(output)
 
 
 # In[18]:
