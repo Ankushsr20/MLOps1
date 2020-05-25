@@ -115,6 +115,10 @@ test_images_norm = test_images / 255.0
 
 
 model = models.Sequential()
+
+
+
+
 model.add(layers.Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1) ))
 model.add(layers.Conv2D(64, (3,3), activation='relu'))
 model.add(layers.Conv2D(128, (3,3), activation='relu'))
