@@ -172,9 +172,10 @@ print(test_accuracy)
 text = fit_model.history
 accuracy = text['accuracy'][1] * 100
 accuracy = int(accuracy)
-f= open("/home/accuracy.txt","w+")
+f= open("accuracy.txt","w+")
 f.write(str(accuracy))
 f.close()
+
 print("Accuracy for the model is : " , accuracy ,"%")
 
 
