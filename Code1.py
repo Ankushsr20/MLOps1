@@ -172,7 +172,7 @@ print(test_accuracy)
 text = fit_model.history
 accuracy = text['accuracy'][1] * 100
 accuracy = int(accuracy)
-f= open("/root/ankush/MLOpsProj/downd/accuracy.txt","w+")
+f= open("/home/accuracy.txt","w+")
 f.write(str(accuracy))
 f.close()
 
